@@ -297,7 +297,7 @@ static void still_secure_cb(void *opdata, ConnContext *context, int is_reply)
 
 static void log_message_cb(void *opdata, const char *message)
 {
-    purple_debug_info("otr", message);
+    purple_debug_info("otr", "%s", message);
 }
 
 static int max_message_size_cb(void *opdata, ConnContext *context)
