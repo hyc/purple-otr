@@ -945,7 +945,10 @@ static void conversation_destroyed(PurpleConversation *conv, void *data)
 /* Set up the per-conversation information display */
 static void otrg_purple_dialog_new_conv(PurpleConversation *conv)
 {
+    ConnContext *context;
     otrg_purple_dialog_add_smp_data(conv);
+    context = otrg_plugin_conv_to_context(conv);
+    dialog_update_label_conv(conv, otrg_plugin_context_to_trust(context));
 }
 
 /* Remove the per-conversation information display */
